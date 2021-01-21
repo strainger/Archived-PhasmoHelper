@@ -173,7 +173,7 @@ margin_top = 461.37
 margin_right = 386.63
 margin_bottom = 877.37
 custom_fonts/normal_font = SubResource( 12 )
-text = "Outcome"
+text = "All"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""

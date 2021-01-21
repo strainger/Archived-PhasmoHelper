@@ -13,18 +13,27 @@ const spiritbox = 32
 
 const number_to_evidence_name = {
 		1: "Fingerprints",
-		2: "Freezing Temperatures",
+		2: "Freezing Temps",
 		4: "Ghost Writing",
-		8: "EMF Level 5",
+		8: "EMF 5",
 		16: "Ghost Orbs",
 		32: "Spiritbox"
+}
+
+const index_to_evidence = {
+	0: fingerprints,
+	1: freezingtemps,
+	2: book,
+	3: emf,
+	4: orbs,
+	5: spiritbox
 }
 
 const ghosts = [
 	["Banshee", emf + freezingtemps + fingerprints], 
 	["Demon", freezingtemps + book + spiritbox],
 	["Jinn", emf + orbs + spiritbox],
-	["Mare", fingerprints + orbs + spiritbox],
+	["Mare", freezingtemps + orbs + spiritbox],
 	["Oni", emf + book + spiritbox], 
 	["Phantom", emf + freezingtemps + orbs], 
 	["Poltergeist", fingerprints + orbs + spiritbox], 
@@ -35,27 +44,23 @@ const ghosts = [
 	["Yurei", freezingtemps + orbs + book]
 ]
 
-func index_to_evidence(index_number):
-	match index_number:
-		0:
-			return fingerprints
-		1:
-			return freezingtemps
-		2:
-			return book
-		3:
-			return emf
-		4:
-			return orbs
-		5:
-			return spiritbox
+func missing_evidence(ghost):
+	var missing_text = ""
+	for number in number_to_evidence_name:
+		if number & (ghost - evidence) == number:
+			missing_text += " | " + number_to_evidence_name[number]
+	return missing_text
 
 func possible_outcomes():
 	var evidence_text = ""
-	print(evidence)
 	for ghost in ghosts:
 		if (ghost[1] & evidence) == evidence:
-			evidence_text += ghost[0] + "\n"
+			if items_selected == 3:
+				evidence_text = "Ghost is a " + ghost[0] + "\n"
+			elif items_selected == 0:
+				evidence_text = "All" + "\n"
+			else:
+				evidence_text += ghost[0] + missing_evidence(ghost[1]) + "\n"
 	return evidence_text
 
 func _on_Evidence_List_item_activated(index):
@@ -63,13 +68,13 @@ func _on_Evidence_List_item_activated(index):
 		get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 0, 0, 1))
 		items_selected -= 1
 		current_items.erase(index)
-		evidence -= index_to_evidence(index)
+		evidence -= index_to_evidence[index]
 		get_node("Evidence_Outcomes").text = possible_outcomes()
 	else:
 		if items_selected <= 2:
 			get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 1, 0, 1))
 			items_selected += 1
 			current_items.append(index)
-			evidence += index_to_evidence(index)
+			evidence += index_to_evidence[index]
 			get_node("Evidence_Outcomes").text = possible_outcomes()
 	pass
