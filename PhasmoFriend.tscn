@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Count_Timer.gd" type="Script" id=1]
 [ext_resource path="res://Evidence.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Images/White/img_freezing.png" type="Texture" id=7]
 [ext_resource path="res://Images/White/img_book.png" type="Texture" id=8]
 [ext_resource path="res://Images/White/img_spiritbox.png" type="Texture" id=9]
+[ext_resource path="res://Reload.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -34,6 +35,12 @@ font_data = ExtResource( 3 )
 size = 80
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
+
+[sub_resource type="DynamicFont" id=15]
+font_data = SubResource( 14 )
+
 [sub_resource type="StyleBoxEmpty" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=9]
@@ -50,15 +57,32 @@ font_data = ExtResource( 3 )
 size = 28
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 25
+font_data = SubResource( 16 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFontData" id=19]
+font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
+
+[sub_resource type="DynamicFont" id=20]
+font_data = SubResource( 19 )
+
 [node name="PhasmoFriend" type="Node2D"]
 
 [node name="Main Screen" type="Node2D" parent="."]
 
 [node name="Sanity" type="RichTextLabel" parent="Main Screen"]
 margin_left = 250.0
-margin_top = 20.0
+margin_top = 10.0
 margin_right = 401.0
-margin_bottom = 126.0
+margin_bottom = 116.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Last Known Sanity"
 __meta__ = {
@@ -66,10 +90,10 @@ __meta__ = {
 }
 
 [node name="Sanity_Input" type="SpinBox" parent="Main Screen/Sanity"]
-margin_left = 7.0
-margin_top = 24.0
-margin_right = 141.0
-margin_bottom = 95.0
+margin_left = 8.7818
+margin_top = 23.1091
+margin_right = 142.782
+margin_bottom = 94.1091
 theme = SubResource( 3 )
 value = 100.0
 __meta__ = {
@@ -80,12 +104,13 @@ __meta__ = {
 script = ExtResource( 1 )
 
 [node name="CountDown_Text" type="RichTextLabel" parent="Main Screen/Count"]
-margin_left = 62.0561
-margin_top = 61.9897
-margin_right = 157.056
-margin_bottom = 107.99
+margin_left = 49.0561
+margin_top = 55.9897
+margin_right = 144.056
+margin_bottom = 101.99
 custom_fonts/normal_font = SubResource( 4 )
 text = "00:00"
+override_selected_font_color = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,10 +118,10 @@ __meta__ = {
 [node name="CountDown_Timer" type="Timer" parent="Main Screen/Count"]
 
 [node name="CountDown_Difficulty" type="MenuButton" parent="Main Screen/Count"]
-margin_left = 21.0
-margin_top = 17.0
-margin_right = 184.0
-margin_bottom = 43.0
+margin_left = 8.0
+margin_top = 11.0
+margin_right = 171.0
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 5 )
 text = "Difficulty Level"
 flat = false
@@ -106,10 +131,10 @@ __meta__ = {
 }
 
 [node name="CountDown_Start" type="Button" parent="Main Screen/Count"]
-margin_left = 187.0
-margin_top = 17.0
-margin_right = 245.0
-margin_bottom = 43.0
+margin_left = 174.0
+margin_top = 11.0
+margin_right = 232.0
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 6 )
 text = "Start"
 __meta__ = {
@@ -130,14 +155,27 @@ __meta__ = {
 [node name="CountUp_Timer" type="Timer" parent="Main Screen/Count"]
 
 [node name="CountUp_Text" type="RichTextLabel" parent="Main Screen/Count"]
-margin_left = 35.0
-margin_top = 108.0
-margin_right = 410.0
-margin_bottom = 208.0
+margin_left = 78.0
+margin_top = 211.0
+margin_right = 447.0
+margin_bottom = 311.0
 custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "00:00:00"
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="CountUp_Button" type="Button" parent="Main Screen/Count"]
+margin_left = 4.0
+margin_top = 231.0
+margin_right = 61.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 15 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Evidence" type="Node2D" parent="Main Screen"]
@@ -149,9 +187,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 45.0
-margin_top = 202.0
+margin_top = 320.0
 margin_right = 381.0
-margin_bottom = 440.0
+margin_bottom = 534.0
 custom_styles/selected_focus = SubResource( 8 )
 custom_styles/bg_focus = SubResource( 9 )
 custom_styles/selected = SubResource( 10 )
@@ -168,10 +206,10 @@ __meta__ = {
 }
 
 [node name="Evidence_Outcomes" type="RichTextLabel" parent="Main Screen/Evidence"]
-margin_left = 25.63
-margin_top = 461.37
-margin_right = 386.63
-margin_bottom = 877.37
+margin_left = 26.0
+margin_top = 605.0
+margin_right = 387.0
+margin_bottom = 883.0
 custom_fonts/normal_font = SubResource( 12 )
 text = "All"
 __meta__ = {
@@ -181,15 +219,55 @@ __meta__ = {
 
 [node name="Evidence_Label" type="Label" parent="Main Screen/Evidence"]
 margin_left = 26.0
-margin_top = 426.0
+margin_top = 570.0
 margin_right = 275.0
-margin_bottom = 461.0
+margin_bottom = 605.0
 custom_fonts/font = SubResource( 13 )
 text = "Possible Outcomes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Node" parent="Main Screen"]
+
+[node name="NameEnter" type="TextEdit" parent="Main Screen/Name"]
+margin_left = 63.0
+margin_top = 142.0
+margin_right = 409.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="Main Screen/Name"]
+margin_left = 7.0
+margin_top = 138.0
+margin_right = 67.0
+margin_bottom = 187.0
+custom_fonts/font = SubResource( 18 )
+text = "Ghost Name"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reload" type="Node" parent="Main Screen"]
+script = ExtResource( 10 )
+
+[node name="Button" type="Button" parent="Main Screen/Reload"]
+margin_left = 282.0
+margin_top = 824.0
+margin_right = 409.0
+margin_bottom = 891.0
+custom_fonts/font = SubResource( 20 )
+text = "New Hunt"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Main Screen/Count/CountDown_Timer" to="Main Screen/Count" method="_on_CountDown_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountDown_Start" to="Main Screen/Count" method="_on_CountDown_Start_pressed"]
 [connection signal="timeout" from="Main Screen/Count/CountUp_Timer" to="Main Screen/Count" method="_on_CountUp_Timer_timeout"]
+[connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
 [connection signal="item_activated" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_item_activated"]
+[connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]

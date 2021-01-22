@@ -13,7 +13,7 @@ func _ready():
 	difficulty_select.connect("id_pressed", self, "select_difficulty")
 	pass
 
-func _process(delta):
+func countdown():
 	if count_down_timer_minutes == 0 and count_down_timer_seconds == 0:
 		if get_node("CountDown_Start").disabled == true:
 			if count_down_complete == false:
@@ -23,10 +23,20 @@ func _process(delta):
 		if count_down_timer_seconds < 0:
 			count_down_timer_seconds = 59
 			count_down_timer_minutes -= 1
+		if count_down_timer_minutes == 1 && count_down_timer_seconds == 0:
+			get_node("CountDown_Text").push_color(Color(1, 1, 0, 1))
+			get_node("CountDown_Text").add_color_override("default_color", Color.yellow)
+		elif count_down_timer_minutes == 0 && count_down_timer_seconds == 30:
+			get_node("CountDown_Text").add_color_override("default_color", Color.red)
 	else:
 		count_down_timer_minutes = 0
 		count_down_timer_seconds = 0
-			
+	
+	get_node("CountDown_Text").set_text( str( "%02d" % count_down_timer_minutes ) + ":" + str( "%02d" % count_down_timer_seconds ) )
+	pass
+
+func countup():
+	get_node("CountDown_Text").push_color(Color.blue)
 	if count_up_timer_seconds > 59:
 		count_up_timer_seconds = 0
 		count_up_timer_minutes += 1
@@ -35,8 +45,11 @@ func _process(delta):
 		count_up_timer_hours += 1
 		
 	get_node("CountUp_Text").set_text( str("%02d" % count_up_timer_hours )+":"+str("%02d" % count_up_timer_minutes )+":"+str( "%02d" % count_up_timer_seconds ) )
-	get_node("CountDown_Text").set_text( str( "%02d" % count_down_timer_minutes ) + ":" + str( "%02d" % count_down_timer_seconds ) )
-	
+	pass
+
+func _process(delta):
+	countdown()
+	countup()
 	pass
 
 func select_difficulty( id ):
@@ -66,3 +79,10 @@ func _on_CountDown_Start_pressed():
 	else:
 		get_node("CountDown_Popup").popup()
 	pass
+
+
+func _on_CountUp_Button_pressed():
+	count_up_timer_seconds = 0 
+	count_up_timer_minutes = 0
+	count_up_timer_hours = 0
+	pass # Replace with function body.
