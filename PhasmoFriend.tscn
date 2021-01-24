@@ -35,25 +35,25 @@ font_data = ExtResource( 3 )
 size = 80
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFontData" id=14]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
-[sub_resource type="DynamicFont" id=15]
-font_data = SubResource( 14 )
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=9]
+[sub_resource type="DynamicFont" id=9]
+font_data = SubResource( 8 )
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=11]
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="DynamicFont" id=14]
 size = 18
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=15]
 size = 28
 font_data = ExtResource( 3 )
 
@@ -171,7 +171,7 @@ margin_left = 4.0
 margin_top = 231.0
 margin_right = 61.0
 margin_bottom = 291.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 9 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -190,10 +190,10 @@ margin_left = 45.0
 margin_top = 320.0
 margin_right = 381.0
 margin_bottom = 534.0
-custom_styles/selected_focus = SubResource( 8 )
-custom_styles/bg_focus = SubResource( 9 )
-custom_styles/selected = SubResource( 10 )
-custom_styles/bg = SubResource( 11 )
+custom_styles/selected_focus = SubResource( 10 )
+custom_styles/bg_focus = SubResource( 11 )
+custom_styles/selected = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
 items = [ "", ExtResource( 4 ), false, "", ExtResource( 7 ), false, "", ExtResource( 8 ), false, "", ExtResource( 5 ), false, "", ExtResource( 6 ), false, "", ExtResource( 9 ), false ]
 select_mode = 1
 allow_reselect = true
@@ -210,7 +210,7 @@ margin_left = 26.0
 margin_top = 605.0
 margin_right = 387.0
 margin_bottom = 883.0
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 14 )
 text = "All"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -222,7 +222,7 @@ margin_left = 26.0
 margin_top = 570.0
 margin_right = 275.0
 margin_bottom = 605.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 15 )
 text = "Possible Outcomes"
 __meta__ = {
 "_edit_use_anchors_": false
