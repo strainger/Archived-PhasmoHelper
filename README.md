@@ -7,6 +7,8 @@ Go into the BUILD folder and find the correct build for your system (Mac/Linux/W
 
 ## Basic Instruction
 
+![](.\Images\GIFs\PhasmoFriend_Example.gif)
+
 ### Select a difficulty level
 
 Click on the 'Difficulty Level' button at the top left. This is needed even on professional to start the count-up timer/total timer. Press the 'Start' button once you have unlocked the door of the house.
