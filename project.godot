@@ -20,6 +20,8 @@ run/main_scene="res://PhasmoFriend.tscn"
 boot_splash/image="res://Images/White/img_handprint.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Images/White/img_handprint.png"
+config/macos_native_icon="res://Images/Icon/img_handprint.icns"
+config/windows_native_icon="res://Images/Icon/img_handprint.ico"
 
 [display]
 
