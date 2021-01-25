@@ -37,7 +37,7 @@ If you've accidently entered the wrong Difficulty level, the hunt has been compl
 
 ### Things you should know
 
-- The total timer will not start counting up until the difficulty timer has counted down to 0
+- The total timer will not start counting up until the difficulty timer has counted down to 0 (so on professional the count-up will start as soon as start is pressed)
 - The difficulty count-down timer will change colors as time goes down so you can see through the corner of your eye that the setup time is almost over
 - There will be more functionality in the future that I am currently working on, such as a cleaner interface, the ability to resize for different resolutions, the ability to track different challenges, track photo types, etc. Please request changes you would like to see.
 - This application was made in Godot, if you would like to build this application and not rely on my exports, this can easily be done by loading the project into godot and running it.

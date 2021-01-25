@@ -16,8 +16,10 @@ _global_script_class_icons={
 [application]
 
 config/name="PhasmoFriend"
-run/main_scene="res://PhasmoFriend.tscn"
+run/main_scene="res://Code/Scenes/PhasmoFriend.tscn"
 boot_splash/image="res://Images/White/img_handprint.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Images/White/img_handprint.png"
 config/macos_native_icon="res://Images/Icon/img_handprint.icns"
@@ -33,4 +35,3 @@ window/handheld/orientation="portrait"
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"
