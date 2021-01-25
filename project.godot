@@ -29,8 +29,9 @@ config/windows_native_icon="res://Images/Icon/img_handprint.ico"
 
 window/size/width=414
 window/size/height=896
-window/size/resizable=false
 window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [rendering]
 
