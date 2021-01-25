@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/img_book.png-bcd5d59eb18328f5b93e0dc9362d7ae8.stex"
+path="res://.import/img_handprint_76.png-1fd26dc14dbe33583bcab42a1417309c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Selected/img_book.png"
-dest_files=[ "res://.import/img_book.png-bcd5d59eb18328f5b93e0dc9362d7ae8.stex" ]
+source_file="res://Images/Icon/img_handprint_76.png"
+dest_files=[ "res://.import/img_handprint_76.png-1fd26dc14dbe33583bcab42a1417309c.stex" ]
 
 [params]
 
