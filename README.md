@@ -7,7 +7,7 @@ Go into the BUILD folder and find the correct build for your system (Mac/Linux/W
 
 ## Basic Instruction
 
-![](.\Images\GIFs\PhasmoFriend_Example.gif)
+![](./Images/GIFs/PhasmoFriend_Example.gif)
 
 ### Select a difficulty level
 
