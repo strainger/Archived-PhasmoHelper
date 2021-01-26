@@ -37,6 +37,10 @@ Double click/tap on the evidence photo to select the evidence. You will know tha
 
 If you've accidently entered the wrong Difficulty level, the hunt has been completed and you would like to hunt again, or another scenario arises that makes you want to refresh the application and set everything to how it was when the app was started, press the 'New Hunt' button at the bottom right of the screen.
 
+### Show and Hide Notes
+
+Press the 'Show Notes' button to display the current notes. These notes can be used to keep track of important objectives or note helpful observations during a hunt. Examples of this are "Smudge the Ghost Room", "Ghost reacts to multiple people", or "Ghost not in basement". Use it as you like! To hide the notes once you have written what you wanted to write, press the same button you pressed to show the notes which now displays 'Hide Notes'.
+
 ### Things you should know
 
 - The total timer will not start counting up until the difficulty timer has counted down to 0 (so on professional the count-up will start as soon as start is pressed)
