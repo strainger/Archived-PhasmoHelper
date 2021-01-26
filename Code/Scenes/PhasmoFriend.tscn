@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Code/Scripts/Reload.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Images/White/img_book.png" type="Texture" id=8]
 [ext_resource path="res://Images/White/img_emf.png" type="Texture" id=9]
 [ext_resource path="res://Images/White/img_orbs.png" type="Texture" id=10]
+[ext_resource path="res://Code/Scripts/Notes.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -73,6 +74,29 @@ font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
 [sub_resource type="DynamicFont" id=20]
 font_data = SubResource( 19 )
+
+[sub_resource type="Animation" id=21]
+resource_name = "Notes_Animation"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Notes:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.24996 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -409, 300 ), Vector2( 7, 300 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=22]
+font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
+
+[sub_resource type="DynamicFont" id=23]
+size = 22
+font_data = SubResource( 22 )
 
 [node name="PhasmoFriend" type="Node2D"]
 
@@ -265,9 +289,43 @@ text = "New Hunt"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Notes" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="Notes_Button" type="Button" parent="Notes"]
+margin_left = 6.0
+margin_top = 824.0
+margin_right = 133.0
+margin_bottom = 891.0
+custom_fonts/font = SubResource( 20 )
+toggle_mode = true
+text = "Show Notes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Notes"]
+anims/Notes_Animation = SubResource( 21 )
+
+[node name="Notes" type="TextEdit" parent="Notes/AnimationPlayer"]
+margin_left = -409.0
+margin_top = 300.0
+margin_right = -7.0
+margin_bottom = 807.0
+custom_fonts/font = SubResource( 23 )
+text = "Hunt Notes"
+highlight_current_line = true
+show_line_numbers = true
+smooth_scrolling = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Main Screen/Count/CountDown_Timer" to="Main Screen/Count" method="_on_CountDown_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountDown_Start" to="Main Screen/Count" method="_on_CountDown_Start_pressed"]
 [connection signal="timeout" from="Main Screen/Count/CountUp_Timer" to="Main Screen/Count" method="_on_CountUp_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
 [connection signal="item_activated" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_item_activated"]
 [connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]
+[connection signal="pressed" from="Notes/Notes_Button" to="Notes" method="_on_Notes_Button_pressed"]
