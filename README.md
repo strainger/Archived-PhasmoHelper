@@ -41,6 +41,11 @@ If you've accidently entered the wrong Difficulty level, the hunt has been compl
 
 Press the 'Show Notes' button to display the current notes. These notes can be used to keep track of important objectives or note helpful observations during a hunt. Examples of this are "Smudge the Ghost Room", "Ghost reacts to multiple people", or "Ghost not in basement". Use it as you like! To hide the notes once you have written what you wanted to write, press the same button you pressed to show the notes which now displays 'Hide Notes'.
 
+### Shortcuts
+
+- Press 'alt' to quickly show your notes
+- Press 'ctrl' to quickly restart the count-up timer
+
 ### Things you should know
 
 - The total timer will not start counting up until the difficulty timer has counted down to 0 (so on professional the count-up will start as soon as start is pressed)

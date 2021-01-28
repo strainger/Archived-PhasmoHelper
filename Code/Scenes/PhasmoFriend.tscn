@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Code/Scripts/Reload.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Images/White/img_emf.png" type="Texture" id=9]
 [ext_resource path="res://Images/White/img_orbs.png" type="Texture" id=10]
 [ext_resource path="res://Code/Scripts/Notes.gd" type="Script" id=11]
+[ext_resource path="res://Code/Scripts/Shortcuts.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -101,6 +102,7 @@ font_data = SubResource( 22 )
 [node name="PhasmoFriend" type="Node2D"]
 
 [node name="Main Screen" type="Node2D" parent="."]
+script = ExtResource( 12 )
 
 [node name="Sanity" type="RichTextLabel" parent="Main Screen"]
 margin_left = 250.0
@@ -290,10 +292,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Notes" type="Node" parent="."]
+[node name="Notes" type="Node" parent="Main Screen"]
 script = ExtResource( 11 )
 
-[node name="Notes_Button" type="Button" parent="Notes"]
+[node name="Notes_Button" type="Button" parent="Main Screen/Notes"]
 margin_left = 6.0
 margin_top = 824.0
 margin_right = 133.0
@@ -305,18 +307,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Notes"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Screen/Notes"]
 anims/Notes_Animation = SubResource( 21 )
 
-[node name="Notes" type="TextEdit" parent="Notes/AnimationPlayer"]
+[node name="Notes" type="TextEdit" parent="Main Screen/Notes/AnimationPlayer"]
 margin_left = -409.0
 margin_top = 300.0
 margin_right = -7.0
 margin_bottom = 807.0
 custom_fonts/font = SubResource( 23 )
-text = "Hunt Notes"
 highlight_current_line = true
 show_line_numbers = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
 smooth_scrolling = true
 wrap_enabled = true
 __meta__ = {
@@ -328,4 +331,4 @@ __meta__ = {
 [connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
 [connection signal="item_activated" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_item_activated"]
 [connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]
-[connection signal="pressed" from="Notes/Notes_Button" to="Notes" method="_on_Notes_Button_pressed"]
+[connection signal="pressed" from="Main Screen/Notes/Notes_Button" to="Main Screen/Notes" method="_on_Notes_Button_pressed"]
