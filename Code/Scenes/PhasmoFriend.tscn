@@ -106,9 +106,9 @@ script = ExtResource( 12 )
 
 [node name="Sanity" type="RichTextLabel" parent="Main Screen"]
 margin_left = 250.0
-margin_top = 10.0
+margin_top = 20.0
 margin_right = 401.0
-margin_bottom = 116.0
+margin_bottom = 126.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Last Known Sanity"
 __meta__ = {
@@ -131,9 +131,9 @@ script = ExtResource( 3 )
 
 [node name="CountDown_Text" type="RichTextLabel" parent="Main Screen/Count"]
 margin_left = 49.0561
-margin_top = 55.9897
+margin_top = 65.9897
 margin_right = 144.056
-margin_bottom = 101.99
+margin_bottom = 111.99
 custom_fonts/normal_font = SubResource( 4 )
 text = "00:00"
 override_selected_font_color = true
@@ -145,9 +145,9 @@ __meta__ = {
 
 [node name="CountDown_Difficulty" type="MenuButton" parent="Main Screen/Count"]
 margin_left = 8.0
-margin_top = 11.0
+margin_top = 21.0
 margin_right = 171.0
-margin_bottom = 37.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 5 )
 text = "Difficulty Level"
 flat = false
@@ -158,9 +158,9 @@ __meta__ = {
 
 [node name="CountDown_Start" type="Button" parent="Main Screen/Count"]
 margin_left = 174.0
-margin_top = 11.0
+margin_top = 21.0
 margin_right = 232.0
-margin_bottom = 37.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 6 )
 text = "Start"
 __meta__ = {
@@ -282,10 +282,10 @@ __meta__ = {
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="Main Screen/Reload"]
-margin_left = 282.0
-margin_top = 824.0
-margin_right = 409.0
-margin_bottom = 891.0
+margin_left = 276.0
+margin_top = 816.0
+margin_right = 403.0
+margin_bottom = 883.0
 custom_fonts/font = SubResource( 20 )
 text = "New Hunt"
 __meta__ = {
@@ -296,10 +296,10 @@ __meta__ = {
 script = ExtResource( 11 )
 
 [node name="Notes_Button" type="Button" parent="Main Screen/Notes"]
-margin_left = 6.0
-margin_top = 824.0
-margin_right = 133.0
-margin_bottom = 891.0
+margin_left = 12.0
+margin_top = 816.0
+margin_right = 139.0
+margin_bottom = 883.0
 custom_fonts/font = SubResource( 20 )
 toggle_mode = true
 text = "Show Notes"
@@ -329,6 +329,6 @@ __meta__ = {
 [connection signal="pressed" from="Main Screen/Count/CountDown_Start" to="Main Screen/Count" method="_on_CountDown_Start_pressed"]
 [connection signal="timeout" from="Main Screen/Count/CountUp_Timer" to="Main Screen/Count" method="_on_CountUp_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
-[connection signal="item_activated" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_item_activated"]
+[connection signal="multi_selected" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_multi_selected"]
 [connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]
 [connection signal="pressed" from="Main Screen/Notes/Notes_Button" to="Main Screen/Notes" method="_on_Notes_Button_pressed"]

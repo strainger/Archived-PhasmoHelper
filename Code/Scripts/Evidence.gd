@@ -63,7 +63,7 @@ func possible_outcomes():
 				evidence_text += ghost[0] + missing_evidence(ghost[1]) + "\n"
 	return evidence_text
 
-func _on_Evidence_List_item_activated(index):
+func _on_Evidence_List_multi_selected(index, selected):
 	if get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 1, 0, 1):
 		get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 0, 0, 1))
 		items_selected -= 1
