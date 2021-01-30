@@ -44,7 +44,7 @@ Press the 'Show Notes' button to display the current notes. These notes can be u
 ### Shortcuts
 
 - Press 'ctrl + alt' to quickly show your notes
-- Press 'ctrl + space' to quickly restart the count-up timer
+- Press 'ctrl + shift' to quickly restart the count-up timer
 
 ### Things you should know
 
