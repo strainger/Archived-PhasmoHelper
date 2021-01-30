@@ -2,13 +2,15 @@
 
 An Open Source Phasmophobia Companion App for Desktop and Mobile Devices.
 
+![](./Images/Github/Header.png)
+
 ## Installation
 
 Go into the BUILD folder and find the correct build for your system (Mac/Linux/Windows) and download the exported files. It may be a compressed zip, several files, you'll need all files in your build folder. Save these files onto your device in a dedicated folder.
 
 ## Basic Instruction
 
-![](./Images/GIFs/PhasmoFriend_Example.gif)
+![](./Images/Github/PhasmoFriend_Example.gif)
 
 ### Select a difficulty level
 
