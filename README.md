@@ -43,8 +43,8 @@ Press the 'Show Notes' button to display the current notes. These notes can be u
 
 ### Shortcuts
 
-- Press 'alt' to quickly show your notes
-- Press '\`' (Left Quote) to quickly restart the count-up timer
+- Press 'ctrl + alt' to quickly show your notes
+- Press 'ctrl + space' to quickly restart the count-up timer
 
 ### Things you should know
 
