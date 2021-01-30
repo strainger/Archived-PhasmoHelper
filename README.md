@@ -1,5 +1,6 @@
 # PhasmoFriend
-A Phasmophobia Companion App
+
+An Open Source Phasmophobia Companion App for Desktop and Mobile Devices.
 
 ## Installation
 
