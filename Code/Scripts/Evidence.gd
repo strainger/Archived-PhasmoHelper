@@ -3,6 +3,7 @@ extends Node2D
 var items_selected = 0
 var current_items = []
 var evidence = 0
+var exclude = 4
 
 const fingerprints = 1
 const freezingtemps = 2
@@ -54,10 +55,10 @@ func missing_evidence(ghost):
 func possible_outcomes():
 	var evidence_text = ""
 	for ghost in ghosts:
-		if (ghost[1] & evidence) == evidence:
-			if items_selected == 3:
-				evidence_text = "Ghost is a " + ghost[0] + "\n"
-			elif items_selected == 0:
+		if ghost[1] == evidence:
+			evidence_text = "Ghost is a " + ghost[0] + "\n"
+		elif (ghost[1] & evidence) == evidence and not (ghost[1] & exclude) != 0:
+			if items_selected == 0:
 				evidence_text = "All" + "\n"
 			else:
 				evidence_text += ghost[0] + missing_evidence(ghost[1]) + "\n"
