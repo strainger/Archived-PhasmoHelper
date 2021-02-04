@@ -78,7 +78,7 @@ func _on_Evidence_List_multi_selected(index, selected):
 		exclude += index_to_evidence[index]
 		evidence -= index_to_evidence[index]
 		get_node("Evidence_Outcomes").text = possible_outcomes()
-	else: # get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 0, 0, 1):
+	else:
 		if items_selected < 3:
 			get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 1, 0, 1))
 			items_selected += 1
