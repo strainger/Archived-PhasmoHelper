@@ -2,7 +2,9 @@ extends Node2D
 
 var items_selected = 0
 var current_items = []
+var excluded_items = []
 var evidence = 0
+var exclude = 0
 
 const fingerprints = 1
 const freezingtemps = 2
@@ -54,27 +56,32 @@ func missing_evidence(ghost):
 func possible_outcomes():
 	var evidence_text = ""
 	for ghost in ghosts:
-		if (ghost[1] & evidence) == evidence:
-			if items_selected == 3:
-				evidence_text = "Ghost is a " + ghost[0] + "\n"
-			elif items_selected == 0:
+		if ghost[1] == evidence:
+			evidence_text = "Ghost is a " + ghost[0] + "\n"
+		elif (ghost[1] & evidence) == evidence and not (ghost[1] & exclude) != 0:
+			if items_selected == 0:
 				evidence_text = "All" + "\n"
 			else:
 				evidence_text += ghost[0] + missing_evidence(ghost[1]) + "\n"
 	return evidence_text
 
 func _on_Evidence_List_multi_selected(index, selected):
-	if get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 1, 0, 1):
+	if get_node("Evidence_List").get_item_custom_bg_color(index) == Color(1, 0, 0, 1):
 		get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 0, 0, 1))
+		excluded_items.erase(index)
+		exclude -= index_to_evidence[index]
+		get_node("Evidence_Outcomes").text = possible_outcomes()
+	elif get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 1, 0, 1):
+		get_node("Evidence_List").set_item_custom_bg_color(index, Color(1, 0, 0, 1))
 		items_selected -= 1
-		current_items.erase(index)
+		excluded_items.append(index)
+		exclude += index_to_evidence[index]
 		evidence -= index_to_evidence[index]
 		get_node("Evidence_Outcomes").text = possible_outcomes()
-	else:
-		if items_selected <= 2:
+	else: # get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 0, 0, 1):
+		if items_selected < 3:
 			get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 1, 0, 1))
 			items_selected += 1
 			current_items.append(index)
 			evidence += index_to_evidence[index]
 			get_node("Evidence_Outcomes").text = possible_outcomes()
-	pass

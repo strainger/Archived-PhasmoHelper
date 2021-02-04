@@ -34,7 +34,9 @@ You may want to restart the total timer to count up in certain scenarios, say yo
 
 ### Entering in Evidence Quickly
 
-Double click/tap on the evidence photo to select the evidence. You will know that the evidence is selected once the evidence image has a light green background. Only three evidence items may be selected. Each time a new evidence is selected, the possible outcomes List will be updated, along with the evidence needed for those outcomes.
+- Click/tap on the evidence photo to select the evidence. You will know that the evidence is selected once the evidence image has a green background. Only three evidence items may be selected. Each time a new evidence is selected, the possible outcomes List will be updated, along with the evidence needed for those outcomes.
+- Click/tap the evidence photo again to rule the evidence out. You will know that the evidence is ruled out once it has a red background. The possible outcomes list will not include any options which would require evidence that has been ruled out.
+- Click/tap the evidence photo again to remove the evidence from the list of ruled-out evidence. You will know the evidence is deselected when the background returns to black.
 
 ### Starting the app fresh
 
