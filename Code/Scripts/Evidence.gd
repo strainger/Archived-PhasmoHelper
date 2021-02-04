@@ -58,7 +58,7 @@ func possible_outcomes():
 	for ghost in ghosts:
 		if ghost[1] == evidence:
 			evidence_text = "Ghost is a " + ghost[0] + "\n"
-		elif (ghost[1] & evidence) == evidence and not (ghost[1] & exclude) != 0:
+		elif (ghost[1] & evidence) == evidence and (ghost[1] & exclude) == 0:
 			if items_selected == 0:
 				evidence_text = "All" + "\n"
 			else:
