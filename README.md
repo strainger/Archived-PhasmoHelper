@@ -8,6 +8,13 @@ An Open Source Phasmophobia Companion App for Desktop and Mobile Devices.
 
 Go into the BUILD folder and find the correct build for your system (Mac/Linux/Windows) and download the exported files. It may be a compressed zip, several files, you'll need all files in your build folder. Save these files onto your device in a dedicated folder.
 
+## How to Download?
+
+- [Android](https://www.youtube.com/watch?v=1rMcxs86D6M)
+- [Windows](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/Windows/PhasmoFriend_Windows_V1.07.zip)
+- [MacOS](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/MacOS/PhasmoFriend_MacOS_V1.06.dmg)
+- [Linux](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/Linux/PhasmoFriend_Linux_V1.07.x86.zip)
+
 ## Basic Instruction
 
 ![](./Images/Github/PhasmoFriend_Example.gif)
@@ -57,5 +64,5 @@ Press the 'Show Notes' button to display the current notes. These notes can be u
 - The difficulty count-down timer will change colors as time goes down so you can see through the corner of your eye that the setup time is almost over
 - There will be more functionality in the future that I am currently working on, such as a cleaner interface, the ability to track different challenges, track photo types, etc. Please request changes you would like to see.
 - This application was made in Godot, if you would like to build this application and not rely on my exports, this can easily be done by loading the project into godot and running it.
-- I will release official versions of this app for FREE on the Apple and Android App Stores once I can put money aside to do so.
+- I will release official versions of this app for FREE on the Apple App Store once I can put money aside to do so.
 - I appreciate you all and I hope you enjoy PhasmoFriend.
