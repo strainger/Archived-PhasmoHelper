@@ -10,7 +10,7 @@ Go into the BUILD folder and find the correct build for your system (Mac/Linux/W
 
 ## How to Download?
 
-- [Android](https://www.youtube.com/watch?v=1rMcxs86D6M)
+- [Android](https://play.google.com/store/apps/details?id=org.straingersoftware.phasmofriend)
 - [Windows](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/Windows/PhasmoFriend_Windows_V1.07.zip)
 - [MacOS](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/MacOS/PhasmoFriend_MacOS_V1.06.dmg)
 - [Linux](https://github.com/strainger/PhasmoFriend/raw/1.07/Builds/Desktop/Linux/PhasmoFriend_Linux_V1.07.x86.zip)
