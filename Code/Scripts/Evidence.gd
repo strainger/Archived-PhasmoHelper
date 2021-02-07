@@ -59,7 +59,7 @@ var Image_Fingerprints_red = Image.new()
 var Texture_Fingerprints_red = ImageTexture.new()
 
 # FREEZINGTEMPS
-var Image_Freezing = 0
+var Image_Freezing_state = 0
 var Image_Freezing_path_white = "res://Images/Evidence/White/img_freezing.png"
 var Image_Freezing_path_green = "res://Images/Evidence/Green/img_freezing.png"
 var Image_Freezing_path_red   = "res://Images/Evidence/Red/img_freezing.png"
@@ -135,6 +135,7 @@ func _ready():
 	Texture_Freezing_white.create_from_image(Image_Freezing_white)
 	Texture_Freezing_green.create_from_image(Image_Freezing_green)
 	Texture_Freezing_red.create_from_image(Image_Freezing_red)
+	get_node("Evidence_Freezing").texture_normal = Texture_Freezing_white
 
 # BOOK
 	Image_Book_white.load(Image_Book_path_white)
@@ -143,6 +144,7 @@ func _ready():
 	Texture_Book_white.create_from_image(Image_Book_white)
 	Texture_Book_green.create_from_image(Image_Book_green)
 	Texture_Book_red.create_from_image(Image_Book_red)
+	get_node("Evidence_Book").texture_normal = Texture_Book_white
 
 # EMF
 	Image_EMF_white.load(Image_EMF_path_white)
@@ -151,6 +153,7 @@ func _ready():
 	Texture_EMF_white.create_from_image(Image_EMF_white)
 	Texture_EMF_green.create_from_image(Image_EMF_green)
 	Texture_EMF_red.create_from_image(Image_EMF_red)
+	get_node("Evidence_EMF").texture_normal = Texture_EMF_white
 
 # ORBS
 	Image_Orbs_white.load(Image_Orbs_path_white)
@@ -159,15 +162,17 @@ func _ready():
 	Texture_Orbs_white.create_from_image(Image_Orbs_white)
 	Texture_Orbs_green.create_from_image(Image_Orbs_green)
 	Texture_Orbs_red.create_from_image(Image_Orbs_red)
+	get_node("Evidence_Orbs").texture_normal = Texture_Orbs_white
 
 # SPIRITBOX
 	Image_Spiritbox_white.load(Image_Spiritbox_path_white)
-	Image_Spiritbox_green.load(Image_Book_path_green)
-	Image_Spiritbox_red.load(Image_Book_path_red)
+	Image_Spiritbox_green.load(Image_Spiritbox_path_green)
+	Image_Spiritbox_red.load(Image_Spiritbox_path_red)
 	Texture_Spiritbox_white.create_from_image(Image_Spiritbox_white)
 	Texture_Spiritbox_green.create_from_image(Image_Spiritbox_green)
 	Texture_Spiritbox_red.create_from_image(Image_Spiritbox_red)
-	pass
+	get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_white
+	
 	
 func missing_evidence(ghost):
 	var missing_text = ""
@@ -209,14 +214,88 @@ func possible_outcomes():
 #			evidence += index_to_evidence[index]
 #			get_node("Evidence_Outcomes").text = possible_outcomes()
 #	pass # Replace with function body.
-
+func _process(delta):
+	print(items_selected)
+	
 func _on_Evidence_Fingerprints_pressed():
-	if Image_Fingerprints_state == 0:
+	if Image_Fingerprints_state == 0 and items_selected != 3:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_green
 		Image_Fingerprints_state = 1
+		items_selected += 1
 	elif Image_Fingerprints_state == 1:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_red
 		Image_Fingerprints_state = 2
-	else:
+		items_selected -= 1
+	elif Image_Fingerprints_state == 2:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_white
 		Image_Fingerprints_state = 0
+
+
+func _on_Evidence_Freezing_pressed():	
+	if Image_Freezing_state == 0 and items_selected != 3:
+		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_green
+		Image_Freezing_state = 1
+		items_selected += 1
+	elif Image_Freezing_state == 1:
+		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_red
+		Image_Freezing_state = 2
+		items_selected -= 1
+	elif Image_Freezing_state == 2:
+		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_white
+		Image_Freezing_state = 0
+
+
+func _on_Evidence_Book_pressed():
+	if Image_Book_state == 0 and items_selected != 3:
+		get_node("Evidence_Book").texture_normal = Texture_Book_green
+		Image_Book_state = 1
+		items_selected += 1
+	elif Image_Book_state == 1:
+		get_node("Evidence_Book").texture_normal = Texture_Book_red
+		Image_Book_state = 2
+		items_selected -= 1
+	elif Image_Book_state == 2:
+		get_node("Evidence_Book").texture_normal = Texture_Book_white
+		Image_Book_state = 0
+
+
+func _on_Evidence_EMF_pressed():
+	if Image_EMF_state == 0 and items_selected != 3:
+		get_node("Evidence_EMF").texture_normal = Texture_EMF_green
+		Image_EMF_state = 1
+		items_selected += 1
+	elif Image_EMF_state == 1:
+		get_node("Evidence_EMF").texture_normal = Texture_EMF_red
+		Image_EMF_state = 2
+		items_selected -= 1
+	elif Image_EMF_state == 2:
+		get_node("Evidence_EMF").texture_normal = Texture_EMF_white
+		Image_EMF_state = 0
+
+
+func _on_Evidence_Orbs_pressed():
+	if Image_Orbs_state == 0 and items_selected != 3:
+		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_green
+		Image_Orbs_state = 1
+		items_selected += 1
+	elif Image_Orbs_state == 1:
+		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_red
+		Image_Orbs_state = 2
+		items_selected -= 1
+	elif Image_Orbs_state == 2:
+		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_white
+		Image_Orbs_state = 0
+
+
+func _on_Evidence_Spiritbox_pressed():
+	if Image_Spiritbox_state == 0 and items_selected != 3:
+		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_green
+		Image_Spiritbox_state = 1
+		items_selected += 1
+	elif Image_Spiritbox_state == 1:
+		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_red
+		Image_Spiritbox_state = 2
+		items_selected -= 1
+	elif Image_Spiritbox_state == 2:
+		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_white
+		Image_Spiritbox_state = 0

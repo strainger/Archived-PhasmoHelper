@@ -231,6 +231,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Evidence_Freezing" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 163.932
+margin_top = 280.728
+margin_right = 245.932
+margin_bottom = 362.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evidence_Orbs" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 163.932
+margin_top = 376.728
+margin_right = 245.932
+margin_bottom = 458.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evidence_Book" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 292.932
+margin_top = 280.728
+margin_right = 374.932
+margin_bottom = 362.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evidence_Spiritbox" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 292.932
+margin_top = 366.728
+margin_right = 374.932
+margin_bottom = 448.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evidence_EMF" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 37.9322
+margin_top = 368.728
+margin_right = 119.932
+margin_bottom = 450.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Name" type="Node" parent="Main Screen"]
 
 [node name="NameEnter" type="TextEdit" parent="Main Screen/Name"]
@@ -307,5 +367,10 @@ __meta__ = {
 [connection signal="timeout" from="Main Screen/Count/CountUp_Timer" to="Main Screen/Count" method="_on_CountUp_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
 [connection signal="pressed" from="Main Screen/Evidence/Evidence_Fingerprints" to="Main Screen/Evidence" method="_on_Evidence_Fingerprints_pressed"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_Freezing" to="Main Screen/Evidence" method="_on_Evidence_Freezing_pressed"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_Orbs" to="Main Screen/Evidence" method="_on_Evidence_Orbs_pressed"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_Book" to="Main Screen/Evidence" method="_on_Evidence_Book_pressed"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_Spiritbox" to="Main Screen/Evidence" method="_on_Evidence_Spiritbox_pressed"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_EMF" to="Main Screen/Evidence" method="_on_Evidence_EMF_pressed"]
 [connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]
 [connection signal="pressed" from="Main Screen/Notes/Notes_Button" to="Main Screen/Notes" method="_on_Notes_Button_pressed"]
