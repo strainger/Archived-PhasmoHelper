@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/img_orbs.png-b3c73c53550233c7226743fea63cfac3.stex"
+path="res://.import/img_freezing.png-9c19174faa71a959e0ef8b34f98b7bbc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Evidence/White/img_orbs.png"
-dest_files=[ "res://.import/img_orbs.png-b3c73c53550233c7226743fea63cfac3.stex" ]
+source_file="res://Images/Evidence/Red/img_freezing.png"
+dest_files=[ "res://.import/img_freezing.png-9c19174faa71a959e0ef8b34f98b7bbc.stex" ]
 
 [params]
 

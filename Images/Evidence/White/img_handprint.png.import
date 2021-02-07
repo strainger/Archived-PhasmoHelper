@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/img_handprint.png-8cd3540ba5bcfc074fbdf59a3e612cda.stex"
+path="res://.import/img_handprint.png-90c85cf498538c46c664276da3b33b28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/White/img_handprint.png"
-dest_files=[ "res://.import/img_handprint.png-8cd3540ba5bcfc074fbdf59a3e612cda.stex" ]
+source_file="res://Images/Evidence/White/img_handprint.png"
+dest_files=[ "res://.import/img_handprint.png-90c85cf498538c46c664276da3b33b28.stex" ]
 
 [params]
 

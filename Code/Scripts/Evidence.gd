@@ -46,6 +46,128 @@ const ghosts = [
 	["Yurei", freezingtemps + orbs + book]
 ]
 
+# FINGERPRINTS
+var Image_Fingerprints_state = 0
+var Image_Fingerprints_path_white = "res://White/img_fingerprints.png"
+var Image_Fingerprints_path_green = "res://Green/img_fingerprints.png"
+var Image_Fingerprints_path_red   = "res://Red/img_fingerprints.png"
+var Image_Fingerprints_white = Image.new()
+var Texture_Fingerprints_white = ImageTexture.new()
+var Image_Fingerprints_green = Image.new()
+var Texture_Fingerprints_green = ImageTexture.new()
+var Image_Fingerprints_red = Image.new()
+var Texture_Fingerprints_red = ImageTexture.new()
+
+# FREEZINGTEMPS
+var Image_Freezing = 0
+var Image_Freezing_path_white = "res://White/img_freezing.png"
+var Image_Freezing_path_green = "res://Green/img_freezing.png"
+var Image_Freezing_path_red   = "res://Red/img_freezing.png"
+var Image_Freezing_white = Image.new()
+var Texture_Freezing_white = ImageTexture.new()
+var Image_Freezing_green = Image.new()
+var Texture_Freezing_green = ImageTexture.new()
+var Image_Freezing_red = Image.new()
+var Texture_Freezing_red = ImageTexture.new()
+
+# BOOK
+var Image_Book_state = 0
+var Image_Book_path_white = "res://White/img_book.png"
+var Image_Book_path_green = "res://Green/img_book.png"
+var Image_Book_path_red   = "res://Red/img_book.png"
+var Image_Book_white = Image.new()
+var Texture_Book_white = ImageTexture.new()
+var Image_Book_green = Image.new()
+var Texture_Book_green = ImageTexture.new()
+var Image_Book_red = Image.new()
+var Texture_Book_red = ImageTexture.new()
+
+# EMF
+var Image_EMF_state = 0
+var Image_EMF_path_white = "res://White/img_emf.png"
+var Image_EMF_path_green = "res://Green/img_emf.png"
+var Image_EMF_path_red   = "res://Red/img_emf.png"
+var Image_EMF_white = Image.new()
+var Texture_EMF_white = ImageTexture.new()
+var Image_EMF_green = Image.new()
+var Texture_EMF_green = ImageTexture.new()
+var Image_EMF_red = Image.new()
+var Texture_EMF_red = ImageTexture.new()
+
+# ORBS
+var Image_Orbs_state = 0
+var Image_Orbs_path_white = "res://White/img_orbs.png"
+var Image_Orbs_path_green = "res://Green/img_orbs.png"
+var Image_Orbs_path_red   = "res://Red/img_orbs.png"
+var Image_Orbs_white = Image.new()
+var Texture_Orbs_white = ImageTexture.new()
+var Image_Orbs_green = Image.new()
+var Texture_Orbs_green = ImageTexture.new()
+var Image_Orbs_red = Image.new()
+var Texture_Orbs_red = ImageTexture.new()
+
+# SPIRITBOX
+var Image_Spiritbox_state = 0
+var Image_Spiritbox_path_white = "res://White/img_spiritbox.png"
+var Image_Spiritbox_path_green = "res://Green/img_spiritbox.png"
+var Image_Spiritbox_path_red   = "res://Red/img_spiritbox.png"
+var Image_Spiritbox_white = Image.new()
+var Texture_Spiritbox_white = ImageTexture.new()
+var Image_Spiritbox_green = Image.new()
+var Texture_Spiritbox_green = ImageTexture.new()
+var Image_Spiritbox_red = Image.new()
+var Texture_Spiritbox_red = ImageTexture.new()
+
+func _ready():
+# FINGERPRINTS
+	Image_Fingerprints_white.load()
+	Image_Fingerprints_green.load()
+	Image_Fingerprints_red.load()
+	Texture_Fingerprints_white.create_from_image(Image_Fingerprints_white)
+	Texture_Fingerprints_green.create_from_image(Image_Fingerprints_white)
+	Texture_Fingerprints_red.create_from_image(Image_Fingerprints_white)
+
+# FREEZINGTEMPS
+	Image_Freezing_white.load()
+	Image_Freezing_green.load()
+	Image_Freezing_red.load()
+	Texture_Freezing_white.create_from_image(Image_Freezing_white)
+	Texture_Freezing_green.create_from_image(Image_Freezing_white)
+	Texture_Freezing_red.create_from_image(Image_Freezing_white)
+
+# BOOK
+	Image_Book_white.load()
+	Image_Book_green.load()
+	Image_Book_red.load()
+	Texture_Book_white.create_from_image(Image_Book_white)
+	Texture_Book_green.create_from_image(Image_Book_white)
+	Texture_Book_red.create_from_image(Image_Book_white)
+
+# EMF
+	Image_EMF_white.load()
+	Image_EMF_green.load()
+	Image_EMF_red.load()
+	Texture_EMF_white.create_from_image(Image_EMF_white)
+	Texture_EMF_green.create_from_image(Image_EMF_white)
+	Texture_EMF_red.create_from_image(Image_EMF_white)
+
+# ORBS
+	Image_Orbs_white.load()
+	Image_Orbs_green.load()
+	Image_Orbs_red.load()
+	Texture_Orbs_white.create_from_image(Image_Orbs_white)
+	Texture_Orbs_green.create_from_image(Image_Orbs_white)
+	Texture_Orbs_red.create_from_image(Image_Orbs_white)
+
+# SPIRITBOX
+	Image_Spiritbox_white.load()
+	Image_Spiritbox_green.load()
+	Image_Spiritbox_red.load()
+	Texture_Spiritbox_white.create_from_image(Image_Spiritbox_white)
+	Texture_Spiritbox_green.create_from_image(Image_Spiritbox_white)
+	Texture_Spiritbox_red.create_from_image(Image_Spiritbox_white)
+	pass
+
 func missing_evidence(ghost):
 	var missing_text = ""
 	for number in number_to_evidence_name:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/img_spiritbox.png-21299fd5d79031c7bc90dafcd6688454.stex"
+path="res://.import/img_spiritbox.png-cb8fd4093b967030e5280774808c20de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/White/img_spiritbox.png"
-dest_files=[ "res://.import/img_spiritbox.png-21299fd5d79031c7bc90dafcd6688454.stex" ]
+source_file="res://Images/Evidence/White/img_spiritbox.png"
+dest_files=[ "res://.import/img_spiritbox.png-cb8fd4093b967030e5280774808c20de.stex" ]
 
 [params]
 
