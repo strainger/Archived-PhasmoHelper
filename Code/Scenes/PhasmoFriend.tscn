@@ -1,15 +1,9 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Code/Scripts/Reload.gd" type="Script" id=2]
 [ext_resource path="res://Code/Scripts/Count_Timer.gd" type="Script" id=3]
 [ext_resource path="res://Code/Scripts/Evidence.gd" type="Script" id=4]
-[ext_resource path="res://Images/White/img_spiritbox.png" type="Texture" id=5]
-[ext_resource path="res://Images/White/img_freezing.png" type="Texture" id=6]
-[ext_resource path="res://Images/White/img_handprint.png" type="Texture" id=7]
-[ext_resource path="res://Images/White/img_book.png" type="Texture" id=8]
-[ext_resource path="res://Images/White/img_emf.png" type="Texture" id=9]
-[ext_resource path="res://Images/White/img_orbs.png" type="Texture" id=10]
 [ext_resource path="res://Code/Scripts/Notes.gd" type="Script" id=11]
 [ext_resource path="res://Code/Scripts/Shortcuts.gd" type="Script" id=12]
 
@@ -45,14 +39,6 @@ font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
 [sub_resource type="DynamicFont" id=9]
 font_data = SubResource( 8 )
-
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
 
 [sub_resource type="DynamicFont" id=14]
 size = 18
@@ -210,35 +196,11 @@ __meta__ = {
 [node name="Evidence" type="Node2D" parent="Main Screen"]
 script = ExtResource( 4 )
 
-[node name="Evidence_List" type="ItemList" parent="Main Screen/Evidence"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 45.0
-margin_top = 259.0
-margin_right = 381.0
-margin_bottom = 473.0
-custom_styles/selected_focus = SubResource( 10 )
-custom_styles/bg_focus = SubResource( 11 )
-custom_styles/selected = SubResource( 12 )
-custom_styles/bg = SubResource( 13 )
-items = [ "", ExtResource( 7 ), false, "", ExtResource( 6 ), false, "", ExtResource( 8 ), false, "", ExtResource( 9 ), false, "", ExtResource( 10 ), false, "", ExtResource( 5 ), false ]
-select_mode = 1
-allow_reselect = true
-max_columns = 3
-same_column_width = true
-icon_mode = 0
-icon_scale = 0.2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Evidence_Outcomes" type="RichTextLabel" parent="Main Screen/Evidence"]
 margin_left = 26.0
-margin_top = 502.0
+margin_top = 500.318
 margin_right = 387.0
-margin_bottom = 811.0
+margin_bottom = 809.318
 custom_fonts/normal_font = SubResource( 14 )
 text = "All"
 __meta__ = {
@@ -253,6 +215,18 @@ margin_right = 275.0
 margin_bottom = 506.0
 custom_fonts/font = SubResource( 15 )
 text = "Possible Outcomes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evidence_Fingerprints" type="TextureButton" parent="Main Screen/Evidence"]
+margin_left = 42.9322
+margin_top = 280.728
+margin_right = 124.932
+margin_bottom = 362.728
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -332,6 +306,6 @@ __meta__ = {
 [connection signal="pressed" from="Main Screen/Count/CountDown_Start" to="Main Screen/Count" method="_on_CountDown_Start_pressed"]
 [connection signal="timeout" from="Main Screen/Count/CountUp_Timer" to="Main Screen/Count" method="_on_CountUp_Timer_timeout"]
 [connection signal="pressed" from="Main Screen/Count/CountUp_Button" to="Main Screen/Count" method="_on_CountUp_Button_pressed"]
-[connection signal="multi_selected" from="Main Screen/Evidence/Evidence_List" to="Main Screen/Evidence" method="_on_Evidence_List_multi_selected"]
+[connection signal="pressed" from="Main Screen/Evidence/Evidence_Fingerprints" to="Main Screen/Evidence" method="_on_Evidence_Fingerprints_pressed"]
 [connection signal="pressed" from="Main Screen/Reload/Button" to="Main Screen/Reload" method="_on_Button_pressed"]
 [connection signal="pressed" from="Main Screen/Notes/Notes_Button" to="Main Screen/Notes" method="_on_Notes_Button_pressed"]
