@@ -1,8 +1,6 @@
 extends Node2D
 
 var items_selected = 0
-var current_items = []
-var excluded_items = []
 var evidence = 0
 var exclude = 0
 
@@ -193,109 +191,110 @@ func possible_outcomes():
 				evidence_text += ghost[0] + missing_evidence(ghost[1]) + "\n"
 	return evidence_text
 
-#func _on_Evidence_List_multi_selected(index, selected):
-#	if get_node("Evidence_List").get_item_custom_bg_color(index) == Color(1, 0, 0, 1):
-#		get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 0, 0, 1))
-#		excluded_items.erase(index)
-#		exclude -= index_to_evidence[index]
-#		get_node("Evidence_Outcomes").text = possible_outcomes()
-#	elif get_node("Evidence_List").get_item_custom_bg_color(index) == Color(0, 1, 0, 1):
-#		get_node("Evidence_List").set_item_custom_bg_color(index, Color(1, 0, 0, 1))
-#		items_selected -= 1
-#		excluded_items.append(index)
-#		exclude += index_to_evidence[index]
-#		evidence -= index_to_evidence[index]
-#		get_node("Evidence_Outcomes").text = possible_outcomes()
-#	else:
-#		if items_selected < 3:
-#			get_node("Evidence_List").set_item_custom_bg_color(index, Color(0, 1, 0, 1))
-#			items_selected += 1
-#			current_items.append(index)
-#			evidence += index_to_evidence[index]
-#			get_node("Evidence_Outcomes").text = possible_outcomes()
-#	pass # Replace with function body.
-func _process(delta):
-	print(items_selected)
-	
 func _on_Evidence_Fingerprints_pressed():
 	if Image_Fingerprints_state == 0 and items_selected != 3:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_green
 		Image_Fingerprints_state = 1
 		items_selected += 1
+		evidence += fingerprints
 	elif Image_Fingerprints_state == 1:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_red
 		Image_Fingerprints_state = 2
 		items_selected -= 1
+		exclude += fingerprints
+		evidence -= fingerprints
 	elif Image_Fingerprints_state == 2:
 		get_node("Evidence_Fingerprints").texture_normal = Texture_Fingerprints_white
 		Image_Fingerprints_state = 0
-
+		exclude -= fingerprints
+	get_node("Evidence_Outcomes").text = possible_outcomes()
 
 func _on_Evidence_Freezing_pressed():	
 	if Image_Freezing_state == 0 and items_selected != 3:
 		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_green
 		Image_Freezing_state = 1
 		items_selected += 1
+		evidence += freezingtemps
 	elif Image_Freezing_state == 1:
 		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_red
 		Image_Freezing_state = 2
 		items_selected -= 1
+		exclude += freezingtemps
+		evidence -= freezingtemps
 	elif Image_Freezing_state == 2:
 		get_node("Evidence_Freezing").texture_normal = Texture_Freezing_white
 		Image_Freezing_state = 0
-
+		exclude -= freezingtemps
+	get_node("Evidence_Outcomes").text = possible_outcomes()
 
 func _on_Evidence_Book_pressed():
 	if Image_Book_state == 0 and items_selected != 3:
 		get_node("Evidence_Book").texture_normal = Texture_Book_green
 		Image_Book_state = 1
 		items_selected += 1
+		evidence += book
 	elif Image_Book_state == 1:
 		get_node("Evidence_Book").texture_normal = Texture_Book_red
 		Image_Book_state = 2
 		items_selected -= 1
+		exclude += book
+		evidence -= book
 	elif Image_Book_state == 2:
 		get_node("Evidence_Book").texture_normal = Texture_Book_white
 		Image_Book_state = 0
-
+		exclude -= book
+	get_node("Evidence_Outcomes").text = possible_outcomes()
 
 func _on_Evidence_EMF_pressed():
 	if Image_EMF_state == 0 and items_selected != 3:
 		get_node("Evidence_EMF").texture_normal = Texture_EMF_green
 		Image_EMF_state = 1
 		items_selected += 1
+		evidence += emf
 	elif Image_EMF_state == 1:
 		get_node("Evidence_EMF").texture_normal = Texture_EMF_red
 		Image_EMF_state = 2
 		items_selected -= 1
+		exclude += emf
+		evidence -= emf
 	elif Image_EMF_state == 2:
 		get_node("Evidence_EMF").texture_normal = Texture_EMF_white
 		Image_EMF_state = 0
-
+		exclude -= emf
+	get_node("Evidence_Outcomes").text = possible_outcomes()
 
 func _on_Evidence_Orbs_pressed():
 	if Image_Orbs_state == 0 and items_selected != 3:
 		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_green
 		Image_Orbs_state = 1
 		items_selected += 1
+		evidence += orbs
 	elif Image_Orbs_state == 1:
 		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_red
 		Image_Orbs_state = 2
 		items_selected -= 1
+		exclude += orbs
+		evidence -= orbs
 	elif Image_Orbs_state == 2:
 		get_node("Evidence_Orbs").texture_normal = Texture_Orbs_white
 		Image_Orbs_state = 0
-
+		exclude -= orbs
+	get_node("Evidence_Outcomes").text = possible_outcomes()
 
 func _on_Evidence_Spiritbox_pressed():
 	if Image_Spiritbox_state == 0 and items_selected != 3:
 		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_green
 		Image_Spiritbox_state = 1
 		items_selected += 1
+		evidence += spiritbox
 	elif Image_Spiritbox_state == 1:
 		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_red
 		Image_Spiritbox_state = 2
 		items_selected -= 1
+		exclude += spiritbox
+		evidence -= spiritbox
 	elif Image_Spiritbox_state == 2:
 		get_node("Evidence_Spiritbox").texture_normal = Texture_Spiritbox_white
 		Image_Spiritbox_state = 0
+		exclude -= spiritbox
+	get_node("Evidence_Outcomes").text = possible_outcomes()

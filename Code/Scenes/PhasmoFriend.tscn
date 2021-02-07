@@ -40,32 +40,32 @@ font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 [sub_resource type="DynamicFont" id=9]
 font_data = SubResource( 8 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=10]
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=11]
 size = 28
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=16]
+[sub_resource type="DynamicFontData" id=12]
 font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=13]
 size = 25
-font_data = SubResource( 16 )
+font_data = SubResource( 12 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=14]
 size = 20
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=19]
+[sub_resource type="DynamicFontData" id=15]
 font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
-[sub_resource type="DynamicFont" id=20]
-font_data = SubResource( 19 )
+[sub_resource type="DynamicFont" id=16]
+font_data = SubResource( 15 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=17]
 resource_name = "Notes_Animation"
 length = 0.25
 tracks/0/type = "value"
@@ -81,12 +81,12 @@ tracks/0/keys = {
 "values": [ Vector2( -409, 300 ), Vector2( 7, 300 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=22]
+[sub_resource type="DynamicFontData" id=18]
 font_path = "res://Fonts/spacegrotesk/SpaceGrotesk-Regular.otf"
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=19]
 size = 22
-font_data = SubResource( 22 )
+font_data = SubResource( 18 )
 
 [node name="PhasmoFriend" type="Node2D"]
 
@@ -201,7 +201,7 @@ margin_left = 26.0
 margin_top = 500.318
 margin_right = 387.0
 margin_bottom = 809.318
-custom_fonts/normal_font = SubResource( 14 )
+custom_fonts/normal_font = SubResource( 10 )
 text = "All"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -213,17 +213,17 @@ margin_left = 26.0
 margin_top = 471.0
 margin_right = 275.0
 margin_bottom = 506.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 11 )
 text = "Possible Outcomes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Evidence_Fingerprints" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 42.9322
-margin_top = 280.728
-margin_right = 124.932
-margin_bottom = 362.728
+margin_left = 29.0
+margin_top = 265.0
+margin_right = 129.0
+margin_bottom = 365.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -232,10 +232,10 @@ __meta__ = {
 }
 
 [node name="Evidence_Freezing" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 163.932
-margin_top = 280.728
-margin_right = 245.932
-margin_bottom = 362.728
+margin_left = 159.0
+margin_top = 265.0
+margin_right = 259.0
+margin_bottom = 365.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -244,10 +244,10 @@ __meta__ = {
 }
 
 [node name="Evidence_Orbs" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 163.932
-margin_top = 376.728
-margin_right = 245.932
-margin_bottom = 458.728
+margin_left = 159.0
+margin_top = 365.0
+margin_right = 259.0
+margin_bottom = 465.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -256,10 +256,10 @@ __meta__ = {
 }
 
 [node name="Evidence_Book" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 292.932
-margin_top = 280.728
-margin_right = 374.932
-margin_bottom = 362.728
+margin_left = 289.0
+margin_top = 265.0
+margin_right = 389.0
+margin_bottom = 365.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -268,10 +268,10 @@ __meta__ = {
 }
 
 [node name="Evidence_Spiritbox" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 292.932
-margin_top = 366.728
-margin_right = 374.932
-margin_bottom = 448.728
+margin_left = 289.0
+margin_top = 365.0
+margin_right = 389.0
+margin_bottom = 465.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -280,10 +280,10 @@ __meta__ = {
 }
 
 [node name="Evidence_EMF" type="TextureButton" parent="Main Screen/Evidence"]
-margin_left = 37.9322
-margin_top = 368.728
-margin_right = 119.932
-margin_bottom = 450.728
+margin_left = 29.0
+margin_top = 365.0
+margin_right = 129.0
+margin_bottom = 465.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand = true
@@ -298,7 +298,7 @@ margin_left = 75.0
 margin_top = 142.0
 margin_right = 409.0
 margin_bottom = 185.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -308,7 +308,7 @@ margin_left = 12.0
 margin_top = 136.0
 margin_right = 75.0
 margin_bottom = 190.0
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 14 )
 text = "Ghost Name"
 autowrap = true
 __meta__ = {
@@ -323,7 +323,7 @@ margin_left = 276.0
 margin_top = 816.0
 margin_right = 403.0
 margin_bottom = 883.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 16 )
 text = "New Hunt"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -337,7 +337,7 @@ margin_left = 12.0
 margin_top = 816.0
 margin_right = 139.0
 margin_bottom = 883.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 16 )
 toggle_mode = true
 text = "Show Notes"
 __meta__ = {
@@ -345,14 +345,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Main Screen/Notes"]
-anims/Notes_Animation = SubResource( 21 )
+anims/Notes_Animation = SubResource( 17 )
 
 [node name="Notes" type="TextEdit" parent="Main Screen/Notes/AnimationPlayer"]
 margin_left = -409.0
 margin_top = 300.0
 margin_right = -7.0
 margin_bottom = 807.0
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 19 )
 highlight_current_line = true
 show_line_numbers = true
 context_menu_enabled = false
