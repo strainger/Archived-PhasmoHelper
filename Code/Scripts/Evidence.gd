@@ -41,7 +41,9 @@ const ghosts = [
 	["Shade", emf + orbs + book], 
 	["Spirit", fingerprints + book + spiritbox], 
 	["Wraith", fingerprints + freezingtemps + spiritbox], 
-	["Yurei", freezingtemps + orbs + book]
+	["Yurei", freezingtemps + orbs + book],
+	["Yokai", orbs + book + spiritbox],
+	["Hantu", fingerprints + orbs + book]
 ]
 
 # FINGERPRINTS
